@@ -11,7 +11,7 @@ export const Basic = () => {
   const [data, setData] = useState<any>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
-    <>
+    <html lang="he" dir="rtl"> {/** TODO: Use lang and dir from props */}
       <Box py={20} display="flex" gap="8px" alignItems="center">
         <Button onClick={onOpen} border="2px solid #7069FA" p="8px" borderRadius="8px">
           Open Flow
@@ -38,6 +38,6 @@ export const Basic = () => {
           </Code>
         </Box>
       )}
-    </>
+    </html>
   )
 }

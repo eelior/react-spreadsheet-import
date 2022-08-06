@@ -2,6 +2,7 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { createContext } from "react"
 import type { RsiProps } from "../types"
 import type { CustomTheme } from "../theme"
+import RtlProvider from "./RtlProvider"
 
 export const RsiContext = createContext({} as any)
 
@@ -25,7 +26,7 @@ export const Providers = <T extends string>({ children, theme, rsiValues }: Prov
       <ChakraProvider>
         {/* cssVarsRoot used to override RSI defaultTheme but not the rest of chakra defaultTheme */}
         <ChakraProvider cssVarsRoot={`#${rootId}`} theme={mergedTheme}>
-          {children}
+          <RtlProvider>{children}</RtlProvider>
         </ChakraProvider>
       </ChakraProvider>
     </RsiContext.Provider>
